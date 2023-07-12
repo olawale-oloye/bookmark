@@ -24,27 +24,27 @@ tab1.addEventListener("click", function () {
   txt1.style.display = "grid";
   txt2.style.display = "none";
   txt3.style.display = "none";
-  tab1.classList.add("activeTab1");
-  tab2.classList.remove("activeTab2");
-  tab3.classList.remove("activeTab3");
+  tab1.classList.add("selectedTab");
+  tab2.classList.remove("selectedTab");
+  tab3.classList.remove("selectedTab");
 });
 
 tab2.addEventListener("click", function () {
   txt1.style.display = "none";
   txt2.style.display = "grid";
   txt3.style.display = "none";
-  tab1.classList.remove("activeTab1");
-  tab2.classList.add("activeTab2");
-  tab3.classList.remove("activeTab3");
+  tab1.classList.remove("selectedTab");
+  tab2.classList.add("selectedTab");
+  tab3.classList.remove("selectedTab");
 });
 
 tab3.addEventListener("click", function () {
   txt1.style.display = "none";
   txt2.style.display = "none";
   txt3.style.display = "grid";
-  tab1.classList.remove("activeTab1");
-  tab2.classList.remove("activeTab2");
-  tab3.classList.add("activeTab3");
+  tab1.classList.remove("selectedTab");
+  tab2.classList.remove("selectedTab");
+  tab3.classList.add("selectedTab");
 });
 
 // Navigation for Responsiveness
@@ -54,13 +54,13 @@ const closeNav = document.querySelector(".ri-close-fill");
 const navList = document.querySelector("nav ul");
 
 openNav.addEventListener("click", function () {
-  navList.style.top = "15%";
+  navList.style.top = 0;
   openNav.style.display = "none";
   closeNav.style.display = "block";
 });
 
 function closeNavToggler() {
-  navList.style.top = "-35%";
+  navList.style.top = "-150%";
   openNav.style.display = "block";
   closeNav.style.display = "none";
 }
