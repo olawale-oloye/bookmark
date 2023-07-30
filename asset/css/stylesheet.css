@@ -81,8 +81,7 @@ nav ul {
   margin-left: auto;
 }
 
-.nav-logo-icon,
-.ri-menu-3-line {
+.nav-logo-icon {
   display: none;
 }
 
@@ -113,6 +112,14 @@ nav a:active {
 .nav-social {
   display: none;
 }
+
+.toggler-menu {
+  display: none;
+}
+
+/* .ri-menu-3-line {
+  display: none;
+} */
 
 /* Article Section  */
 main {
@@ -829,10 +836,15 @@ footer i {
     /* margin-top: 2rem; */
   }
 
-  .ri-menu-3-line {
+  .toggler-menu {
     display: block;
     font-size: 1.5rem;
   }
+
+  /* .ri-menu-3-line {
+    display: block;
+    font-size: 1.5rem;
+  } */
 
   .nav-logo-icon {
     display: flex;
