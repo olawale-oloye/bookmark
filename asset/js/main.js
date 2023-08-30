@@ -1,3 +1,8 @@
+const form = document.querySelector("form");
+const formValidatorModal = document.querySelector(".form-validation-modal-bg");
+const errorText = document.querySelector(".form-validation-modal p");
+const emailRegEx =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 // FAQ functional Arrow and Display
 
 const faqs = document.querySelectorAll(".faq");
@@ -91,4 +96,35 @@ window.addEventListener("scroll", function () {
 arrow.addEventListener("click", function () {
   document.documentElement.scrollTop = "0";
   document.body.scrollTop = "0";
+});
+
+// closeModalButton.addEventListener("click", function () {
+//   formValidatorModal.style.display = "none";
+// });
+
+function alertInfo(alertTxt) {
+  formValidatorModal.style.display = "flex";
+  errorText.textContent = alertTxt;
+  form.formEmail.value = "";
+}
+
+// Form Validation
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // console.log(form.formEmail.value);
+  const emailValue = form.formEmail.value;
+  if (emailValue === "") {
+    alertInfo("Whoops, make sure it is an email");
+  } else if (!emailRegEx.test(emailValue)) {
+    alertInfo("Please, provide a valid email address");
+  } else {
+    formValidatorModal.style.display = "flex";
+    alertInfo("You have succesffully subscribe for the weekly newsletter");
+  }
+});
+
+formValidatorModal.addEventListener("click", function (e) {
+  if (e.target.classList.contains("close-modal")) {
+    formValidatorModal.style.display = "none";
+  }
 });

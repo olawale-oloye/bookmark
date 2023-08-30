@@ -226,13 +226,18 @@
       <section id="footTop">
         <h3>35,000 + ALREADY JOINED</h3>
         <h1>Stay up-to-date with what we’re doing</h1>
-        <form action="">
+        <form>
+          <!-- <div class="form-man"> -->
           <input
             for="email"
-            type="email"
+            type="text"
             placeholder="Enter your email address"
             class="form"
+            name="formEmail"
           />
+
+          <!-- <span>Whoops, make sure it is an email</span> -->
+
           <button type="submit" class="btn_spec">Contact Us</button>
         </form>
       </section>
@@ -255,6 +260,13 @@
         <i class="ri-arrow-up-s-line"></i>
       </div>
     </footer>
+    <div class="form-validation-modal-bg">
+      <div class="form-validation-modal">
+        <p></p>
+        <!-- Whoops, make sure it is an email -->
+        <button class="close-modal">Ok!</button>
+      </div>
+    </div>
 
     <script src="/asset/js/main.js"></script>
   </body>

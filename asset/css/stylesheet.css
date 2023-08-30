@@ -37,6 +37,7 @@ p {
 html,
 body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -46,6 +47,14 @@ a {
 button {
   all: unset;
   cursor: pointer;
+}
+
+form input {
+  outline: none;
+}
+
+form input:focus {
+  background-color: var(--white);
 }
 
 /* Navigation Section  */
@@ -141,11 +150,11 @@ main p {
 }
 
 .row1 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  justify-content: flex-start;
   gap: 0.5rem;
-  width: 70%;
+  width: 100%;
   height: 2.8rem;
 }
 
@@ -157,6 +166,7 @@ main p {
   color: var(--white);
   background-color: var(--softBlue);
   box-shadow: 0 3px 3px var(--greyishBlue);
+  padding: 0 10px;
 }
 
 .row1 button:nth-child(2) {
@@ -442,7 +452,7 @@ main p {
 .paragraph {
   text-align: left;
   width: 90%;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   display: none;
 }
 
@@ -508,10 +518,20 @@ footer {
   /* margin-bottom: 2rem; */
 }
 
+/* form input {
+  width: 100%;
+} */
+
 .form:focus {
-  background-color: #000000;
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--lightRed);
 }
+
+/* .form-man {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+} */
 
 .btn_spec {
   color: var(--white) !important;
@@ -602,6 +622,39 @@ footer i {
   /* left: 85%; */
   right: 7%;
   z-index: 1;
+}
+
+.form-validation-modal-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #252b46d8;
+  width: 100%;
+  height: 100dvh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-validation-modal {
+  background-color: #ffffff;
+  font-size: 1.4rem;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-validation-modal p {
+  font-size: 1.5rem;
+}
+
+.form-validation-modal button {
+  color: #ffffff;
+  background-color: var(--softBlue);
+  padding: 5px 10px;
+  margin-top: 22px;
+  border-radius: 4px;
 }
 
 /* Responsiveness  */
@@ -774,7 +827,13 @@ footer i {
   }
 
   .row1 {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row1 button {
+    padding: 10px;
   }
 
   nav {
@@ -1003,8 +1062,8 @@ footer i {
 }
 
 @media screen and (max-width: 480px) {
-  .row1 {
-    width: 70%;
+  .row1 button {
+    width: 100%;
   }
 }
 
